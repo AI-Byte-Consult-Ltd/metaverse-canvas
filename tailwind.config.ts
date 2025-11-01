@@ -65,25 +65,58 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { 
+            boxShadow: "0 0 20px hsl(180 100% 50% / 0.3), 0 0 40px hsl(180 100% 50% / 0.1)",
+            opacity: "1"
           },
-          to: {
-            height: "0",
+          "50%": { 
+            boxShadow: "0 0 30px hsl(180 100% 50% / 0.5), 0 0 60px hsl(180 100% 50% / 0.2)",
+            opacity: "0.9"
           },
+        },
+        "glow-pulse-purple": {
+          "0%, 100%": { 
+            boxShadow: "0 0 20px hsl(280 100% 60% / 0.3), 0 0 40px hsl(280 100% 60% / 0.1)",
+          },
+          "50%": { 
+            boxShadow: "0 0 30px hsl(280 100% 60% / 0.5), 0 0 60px hsl(280 100% 60% / 0.2)",
+          },
+        },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "scale-in": {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" }
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" }
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "glow-pulse-purple": "glow-pulse-purple 2s ease-in-out infinite",
+        "fade-in": "fade-in 0.3s ease-out",
+        "scale-in": "scale-in 0.2s ease-out",
+        "shimmer": "shimmer 3s linear infinite",
+      },
+      backgroundImage: {
+        "grid-glow": "linear-gradient(180deg, hsl(180 100% 50% / 0.05) 1px, transparent 1px), linear-gradient(90deg, hsl(180 100% 50% / 0.05) 1px, transparent 1px)",
+      },
+      backgroundSize: {
+        "grid": "40px 40px",
       },
     },
   },
